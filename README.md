@@ -9,7 +9,7 @@ This is a test to see if convloutional neural network running on a cell phone ca
 
 ### 1. Environment
 
-This project is currently using windows 10. Anaconda, CUDA, CuDNN are installed using this [tutorial] (https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10)
+This project is currently using windows 10. Anaconda, CUDA, CuDNN are installed using this [tutorial](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10)
 
 The requirements for the notebooks below are:
 * python 3
@@ -19,8 +19,7 @@ The requirements for the notebooks below are:
 
 Installing in the order presented seemed to resolve potential problems. Additional packages openCV, numpy, pandas, os.
 
-[Potentially useful compatibilitty list] 
-(https://www.tensorflow.org/install/source#tested_build_configurations)
+[Potentially useful compatibilitty list](https://www.tensorflow.org/install/source#tested_build_configurations)
 
 ### 2. Gethering Images and preprocessing
 
@@ -56,11 +55,11 @@ Later I can combine or separate these classes to see if there are any benefits f
 
 ### 4. Generate dataloader csv for TF_Lite model maker
 
-The labelimg software outputs .xml file for each annotated image. The .xml file contains the class and coordinates of the objects in the image. The uses the xml_to_csv.py by Dan Tran found [here.] (https://github.com/datitran/raccoon_dataset) Then the data in the csv file is converted to a csv file format expected for the data loader for the TF_Lite model maker. Final data format in the csv is expalined [here] (https://www.tensorflow.org/lite/tutorials/model_maker_object_detection)
+The labelimg software outputs .xml file for each annotated image. The .xml file contains the class and coordinates of the objects in the image. The uses the xml_to_csv.py by Dan Tran found [here.](https://github.com/datitran/raccoon_dataset) Then the data in the csv file is converted to a csv file format expected for the data loader for the TF_Lite model maker. Final data format in the csv is expalined [here]https://www.tensorflow.org/lite/tutorials/model_maker_object_detection)
 
 ###5. Run model builder
 
-I followed the code labs found [here.] (https://www.tensorflow.org/lite/tutorials/model_maker_object_detection)
+I followed the code labs found [here.](https://www.tensorflow.org/lite/tutorials/model_maker_object_detection)
 
 (SHOW CODE BLOCKS)
 
