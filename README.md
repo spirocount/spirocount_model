@@ -1,13 +1,13 @@
-#Training a TF-Lite Object Dectection model with Spirochete Images
+# Training a TF-Lite Object Dectection model with Spirochete Images
 
-###Brief Summary
+### Brief Summary
 *Update: 11/28/2021*
 This is a test to see if convloutional neural network running on a cell phone can be used for object detecrtion and counting of morphologically diverse bacteria (spirochetes). This project was inspired by this tutorial by the tensorflow team: 
 
 * https://www.youtube.com/watch?v=vLxn5mOuWAk&t=1529s
 * https://codelabs.developers.google.com/tflite-object-detection-android#0
 
-###1. Environment
+### 1. Environment
 
 This project is currently using windows 10. Anaconda, CUDA, CuDNN are installed using this [tutorial] (https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10)
 
@@ -22,7 +22,7 @@ Installing in the order presented seemed to resolve potential problems. Addition
 [Potentially useful compatibilitty list] 
 (https://www.tensorflow.org/install/source#tested_build_configurations)
 
-###2. Gethering Images and preprocessing
+### 2. Gethering Images and preprocessing
 
 Images were taken under the darkfield microscope using a DSLR camera attached to the phototube.
 
@@ -38,7 +38,7 @@ The tensorflow_lite model maker recommends images sizes and formats. I used a Op
 
 Total of X images are use to build model in this repository. Images can be accessed here.
 
-###3. Annotation
+### 3. Annotation
 
 The objects in the image need to be annotated by hand. Annotation marks the location of the objects to be identified in each image. labelimg software was used for annotation.
 
@@ -54,7 +54,7 @@ Later I can combine or separate these classes to see if there are any benefits f
 
 (SHOW SCREENSHOT OF labelimg)
 
-###4. Generate dataloader csv for TF_Lite model maker
+### 4. Generate dataloader csv for TF_Lite model maker
 
 The labelimg software outputs .xml file for each annotated image. The .xml file contains the class and coordinates of the objects in the image. The uses the xml_to_csv.py by Dan Tran found [here.] (https://github.com/datitran/raccoon_dataset) Then the data in the csv file is converted to a csv file format expected for the data loader for the TF_Lite model maker. Final data format in the csv is expalined [here] (https://www.tensorflow.org/lite/tutorials/model_maker_object_detection)
 
@@ -64,14 +64,14 @@ I followed the code labs found [here.] (https://www.tensorflow.org/lite/tutorial
 
 (SHOW CODE BLOCKS)
 
-###6. Enter model to test app
+### 6. Enter model to test app
 
 The model was entered into a test app found here
 We are currently build an app which uses spirochete detecting model to count spirochetes here:
 
 (SHOW TEST IMAGES)
 
-###7. Evaluate models. 
+### 7. Evaluate models. 
 
 EfficientDet-Lite0 -- poor detection
 EfficientDet-Lite1 -- poor detection
