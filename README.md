@@ -1,23 +1,24 @@
 # Training a TF-Lite Object Dectection model with Spirochete Images
 
 ### Brief Summary
-*Update: 11/28/2021*
+*Update: 11/4/2021*
 This is a test to see if convloutional neural network running on a cell phone can be used for object detecrtion and counting of morphologically diverse bacteria (spirochetes). This project was inspired by this tutorial by the tensorflow team: 
 
-* https://www.youtube.com/watch?v=vLxn5mOuWAk&t=1529s
-* https://codelabs.developers.google.com/tflite-object-detection-android#0
+* [youtube video]https://www.youtube.com/watch?v=vLxn5mOuWAk&t=1529s
+* [codelabs]https://codelabs.developers.google.com/tflite-object-detection-android#0
+
+This numbered list outlines steps taken to train the tflite model.
 
 ### 1. Environment
 
 This project is currently using windows 10. Anaconda, CUDA, CuDNN are installed using this [tutorial](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10)
 
-The requirements for the notebooks below are:
-* python 3
-* keras==2.5.0
+The requirements for the notebooks below are communicated in the environment.yml
+* python 3.7
 * tflite-model-maker==0.3.1 (this should install tensorflow GPU for itself.)
 * tensorflow==2.5.0
-
-Installing in the order presented seemed to resolve potential problems. Additional packages openCV, numpy, pandas, os.
+* pycocotools
+* Additional packages openCV, numpy, pandas.
 
 [Potentially useful compatibilitty list](https://www.tensorflow.org/install/source#tested_build_configurations)
 
@@ -25,7 +26,9 @@ Installing in the order presented seemed to resolve potential problems. Addition
 
 Images were taken under the darkfield microscope using a DSLR camera attached to the phototube.
 
-(SHOW IMAGES HERE) 
+<p align="center">
+  <img src="doc/microscopy.png">
+</p>
 
 The tensorflow_lite model maker recommends images sizes and formats. I used a OpenCV preprocess images JUPTR notebook here. For my training I selected and preprocessed images such that:
 * images contained spirochetes that can be boardered by a box
@@ -35,7 +38,6 @@ The tensorflow_lite model maker recommends images sizes and formats. I used a Op
 * images were passed through google photo processing for contrast and brightness
 * Each image was saved at each point in processing
 
-Total of X images are use to build model in this repository. Images can be accessed here.
 
 ### 3. Annotation
 
@@ -51,30 +53,47 @@ Rules for annotation I used
 * calss 3: low resolution images with no morphology
 Later I can combine or separate these classes to see if there are any benefits for model training.
 
-(SHOW SCREENSHOT OF labelimg)
+<p align="center">
+  <img src="doc/labelimg.png">
+</p>
+
+About 160 images are use to build model in this repository (subject to change). Images.zip is provided and includes images I gathered and annotated. files can be unpacked to a folder called images to follow along with the Jupyter notebooks starting from step 4.
 
 ### 4. Generate dataloader csv for TF_Lite model maker
 
 The labelimg software outputs .xml file for each annotated image. The .xml file contains the class and coordinates of the objects in the image. The uses the xml_to_csv.py by Dan Tran found [here.](https://github.com/datitran/raccoon_dataset) 
 
-C:\Users\billk\Desktop\Git\spirochete_vision>python 3_xml_to_csv.py
+``
+python 3_xml_to_csv.py
+``
 
-Then the data in the csv file is converted to a csv file format expected for the data loader for the TF_Lite model maker. Final data format in the csv is expalined [here.](https://www.tensorflow.org/lite/tutorials/model_maker_object_detection)
+This outputs a images_labels.csv file. Then the data in the csv file is converted to a format required by the TF_Lite model maker using the Jupyter notebook 4_TF-lite-model-maker.ipynb.
 
-### 5. Run model builder
+Final data format in the csv is expalined [here.](https://www.tensorflow.org/lite/tutorials/model_maker_object_detection)
+
+### 6. Data augmentation
+
+Spirochete are present in the image facing all all angles. To test if adding additional images of spirochetes from different angles help train a more functional model, we introduced mirrored images and 90 degrees clockwise rotated images. This allows each spirochete in an image to represent 3 different possible orientation of how a spirochete may appear in an image.
+
+* To create the transformed images use: 5_mirror_transpose.ipynb
+* To create annnotation for the transformed images use: 5_data_augmentation.ipynb
+
+### 6. Run model builder
 
 I followed the code labs found [here.](https://www.tensorflow.org/lite/tutorials/model_maker_object_detection)
 
 (SHOW CODE BLOCKS)
 
-### 6. Enter model to test app
+### 7. Enter model to test app
 
 The model was entered into a test app found here
 We are currently build an app which uses spirochete detecting model to count spirochetes here:
 
-(SHOW TEST IMAGES)
+<p align="center">
+  <img src="doc/afterdetect.png">
+</p>
 
-### 7. Evaluate models. 
+### 8. Evaluate models. 
 
 EfficientDet-Lite0 -- poor detection
 EfficientDet-Lite1 -- poor detection
@@ -82,6 +101,9 @@ EfficientDet-Lite2 -- works
 EfficientDet-Lite3 -- batch size need to be reduced to train on my hardware. No improvement against EfficientDet-Lite2
 
 Currently: more images are reqired to train a better more general model for spiochete detection
+
+
+
 
 
 
