@@ -1,0 +1,11 @@
+name: tflite
+channels:
+  - defaults
+dependencies:
+  - python=3.7
+  - pip
+  - pip:
+    - tflite-model-maker==0.3.1
+    - tensorflow==2.5.0
+    - jupyter
+    - pycocotools

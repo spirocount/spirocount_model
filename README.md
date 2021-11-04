@@ -55,7 +55,11 @@ Later I can combine or separate these classes to see if there are any benefits f
 
 ### 4. Generate dataloader csv for TF_Lite model maker
 
-The labelimg software outputs .xml file for each annotated image. The .xml file contains the class and coordinates of the objects in the image. The uses the xml_to_csv.py by Dan Tran found [here.](https://github.com/datitran/raccoon_dataset) Then the data in the csv file is converted to a csv file format expected for the data loader for the TF_Lite model maker. Final data format in the csv is expalined [here.](https://www.tensorflow.org/lite/tutorials/model_maker_object_detection)
+The labelimg software outputs .xml file for each annotated image. The .xml file contains the class and coordinates of the objects in the image. The uses the xml_to_csv.py by Dan Tran found [here.](https://github.com/datitran/raccoon_dataset) 
+
+C:\Users\billk\Desktop\Git\spirochete_vision>python 3_xml_to_csv.py
+
+Then the data in the csv file is converted to a csv file format expected for the data loader for the TF_Lite model maker. Final data format in the csv is expalined [here.](https://www.tensorflow.org/lite/tutorials/model_maker_object_detection)
 
 ### 5. Run model builder
 
