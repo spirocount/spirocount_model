@@ -4,8 +4,8 @@
 *Update: 11/4/2021*
 This is a test to see if convloutional neural network running on a cell phone can be used for object detecrtion and counting of morphologically diverse bacteria (spirochetes). This project was inspired by this tutorial by the tensorflow team: 
 
-* [youtube video]https://www.youtube.com/watch?v=vLxn5mOuWAk&t=1529s
-* [codelabs]https://codelabs.developers.google.com/tflite-object-detection-android#0
+* [youtube video](https://www.youtube.com/watch?v=vLxn5mOuWAk&t=1529s)
+* [codelabs](https://codelabs.developers.google.com/tflite-object-detection-android#0)
 
 This numbered list outlines steps taken to train the tflite model.
 
@@ -27,7 +27,7 @@ The requirements for the notebooks below are communicated in the environment.yml
 Images were taken under the darkfield microscope using a DSLR camera attached to the phototube.
 
 <p align="center">
-  <img src="doc/microscopy.png">
+  <img src="docs/microscopy.png">
 </p>
 
 The tensorflow_lite model maker recommends images sizes and formats. I used a OpenCV preprocess images JUPTR notebook here. For my training I selected and preprocessed images such that:
@@ -37,7 +37,6 @@ The tensorflow_lite model maker recommends images sizes and formats. I used a Op
 * images are 960 by 960 resolution maximum 
 * images were passed through google photo processing for contrast and brightness
 * Each image was saved at each point in processing
-
 
 ### 3. Annotation
 
@@ -54,7 +53,7 @@ Rules for annotation I used
 Later I can combine or separate these classes to see if there are any benefits for model training.
 
 <p align="center">
-  <img src="doc/labelimg.png">
+  <img src="docs/labelimg.png">
 </p>
 
 About 160 images are use to build model in this repository (subject to change). Images.zip is provided and includes images I gathered and annotated. files can be unpacked to a folder called images to follow along with the Jupyter notebooks starting from step 4.
@@ -90,7 +89,7 @@ The model was entered into a test app found here
 We are currently build an app which uses spirochete detecting model to count spirochetes here:
 
 <p align="center">
-  <img src="doc/afterdetect.png">
+  <img src="docs/afterdetect.png">
 </p>
 
 ### 8. Evaluate models. 
