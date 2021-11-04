@@ -81,12 +81,12 @@ Spirochete are present in the image facing all all angles. To test if adding add
 
 I followed the code labs found [here.](https://www.tensorflow.org/lite/tutorials/model_maker_object_detection)
 
-(SHOW CODE BLOCKS)
+To train the model use: 6_Aug_TF-lite-model.ipynb
 
 ### 7. Enter model to test app
 
-The model was entered into a test app found here
-We are currently build an app which uses spirochete detecting model to count spirochetes here:
+The model was entered into a test app found at https://codelabs.developers.google.com/tflite-object-detection-android#0
+We are currently building an app which uses spirochete detecting model to count spirochetes at https://github.com/djewing/Spriocount
 
 <p align="center">
   <img src="docs/afterdetct.png">
