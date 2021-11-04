@@ -27,7 +27,7 @@ The requirements for the notebooks below are communicated in the environment.yml
 Images were taken under the darkfield microscope using a DSLR camera attached to the phototube.
 
 <p align="center">
-  <img src="docs/microscopy.png">
+  <img src="docs/2.jpg">
 </p>
 
 The tensorflow_lite model maker recommends images sizes and formats. I used a OpenCV preprocess images JUPTR notebook here. For my training I selected and preprocessed images such that:
@@ -53,7 +53,7 @@ Rules for annotation I used
 Later I can combine or separate these classes to see if there are any benefits for model training.
 
 <p align="center">
-  <img src="docs/labelimg.png">
+  <img src="docs/labelimg.PNG">
 </p>
 
 About 160 images are use to build model in this repository (subject to change). Images.zip is provided and includes images I gathered and annotated. files can be unpacked to a folder called images to follow along with the Jupyter notebooks starting from step 4.
@@ -89,7 +89,7 @@ The model was entered into a test app found here
 We are currently build an app which uses spirochete detecting model to count spirochetes here:
 
 <p align="center">
-  <img src="docs/afterdetect.png">
+  <img src="docs/afterdetct.png">
 </p>
 
 ### 8. Evaluate models. 
