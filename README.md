@@ -101,7 +101,7 @@ The model was entered into a test app found here
 We are currently build an app which uses spirochete detecting model to count spirochetes [here:](https://github.com/djewing/Spirocount)
 
 <p align="center">
-  <img src="doc/afterdetct.png">
+  <img src="docs/afterdetct.png">
 </p>
 
 ### 8. Evaluate models. 
