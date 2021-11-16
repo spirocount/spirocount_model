@@ -7,8 +7,8 @@ My contact information can be found at https://www.researchgate.net/profile/Will
 *Last ppdate: 11/15/2021*
 This is a test to see if convloutional neural network-based object detection running on a cell phone can be used for counting of morphologically diverse bacteria like spirochetes. Pathogenic spirochetes are routinely counted under the microscope in research laboratories, an automated counting method may reduce time intesiveness of this process. This project was inspired by this tutorial by the tensorflow team: 
 
-* [youtube video]https://www.youtube.com/watch?v=vLxn5mOuWAk&t=1529s
-* [codelabs]https://codelabs.developers.google.com/tflite-object-detection-android#0
+* [youtube video](https://www.youtube.com/watch?v=vLxn5mOuWAk&t=1529s)
+* [codelabs](https://codelabs.developers.google.com/tflite-object-detection-android#0)
 
 The numbered list outlines steps taken to train the tflite model. To build your own model from the images.zip file provided in this repository, skip step 2 and 3 (these steps are already done for you). The unzipped 'images' folder should be in the directory with the jupytr notebooks and python script given.
 
@@ -34,7 +34,7 @@ The requirements for the notebooks below are communicated in the environment.yml
 Images were taken under the darkfield microscope using a DSLR camera attached to the phototube.
 
 <p align="center">
-  <img src="doc/microscopy.png">
+  <img src="docs/microscopy.png">
 </p>
 
 The tensorflow_lite model maker recommends images sizes and formats. I used a OpenCV preprocess images JUPTR notebook here. For my training I selected and preprocessed images such that:
@@ -61,7 +61,7 @@ Rules for annotation I used
 Later I can combine or separate these classes to see if there are any benefits for model training.
 
 <p align="center">
-  <img src="doc/labelimg.png">
+  <img src="docs/labelimg.PNG">
 </p>
 
 About 200 images are use to build model in this repository (subject to change). Images.zip is provided and includes images I gathered and annotated. files can be unpacked to a folder called images to follow along with the Jupyter notebooks starting from step 4.
