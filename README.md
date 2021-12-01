@@ -1,7 +1,7 @@
 # Training a TF-Lite Object Dectection Model with Spirochete Images
 
 ### We are seeking collaborators in order to collect more images to improve the detection model!!
-My contact information can be found at https://www.researchgate.net/profile/William-Boyle-4
+Countact us at spirocount@gmail.com
 
 ### Brief Summary
 *Last ppdate: 11/15/2021*
